@@ -1,5 +1,5 @@
 const slugify = require('slugify')
-const wcagify = require('./wcagify')
+const wcagify = require('wcagify')
 
 function code (renderer) {
   renderer.code = function (code, infostring, escaped) {

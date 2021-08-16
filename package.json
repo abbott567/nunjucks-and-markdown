@@ -1,6 +1,6 @@
 {
   "name": "markdown-documents",
-  "version": "1.0.0-alpha",
+  "version": "1.0.1",
   "description": "Markdown compiler for simple documents.",
   "main": "index.njk",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/abbott567/nunjucks-and-markdown.git"
   },
   "author": "Craig Abbott",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/abbott567/nunjucks-and-markdown/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/abbott567/nunjucks-and-markdown",
   "engines": {
     "node": "12.13.1"
   },
@@ -44,6 +44,7 @@
     "nunjucks": "^3.2.3",
     "require-dir": "^1.2.0",
     "sass": "^1.37.5",
-    "slugify": "^1.6.0"
+    "slugify": "^1.6.0",
+    "wcagify": "^1.0.0"
   }
 }
