@@ -1,0 +1,24 @@
+.back-to-top a { @extend a; }
+.back-to-top__icon { 
+  padding-right: .5rem; 
+}
+.back-to-top-js--display-none {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .back-to-top-js {
+    position: absolute;
+    top: 350vh;
+    bottom: 0rem;
+    left: -15rem;
+    padding: 0;
+  }
+
+  .back-to-top-js__link {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90vh;
+    padding: 0;
+  }
+}

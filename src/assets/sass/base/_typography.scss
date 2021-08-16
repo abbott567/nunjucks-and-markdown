@@ -1,0 +1,51 @@
+// Fonts
+$default-font: sans-serif;
+$mono-font: monospace, monospace;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 700;
+$font-height: 1.5;
+
+html {
+  font-family: $default-font;
+  color: $dark-grey;
+  line-height: $font-height;
+  font-size: 100%;
+}
+
+pre,
+code {
+  font-family: $mono-font;
+  font-size: 1.1875rem;
+  color: $code-text-colour;
+  background-color: $code-background-colour;
+}
+code:not(.hjls) {
+  padding: 0 5px;
+}
+
+h1,
+.heading-xl {
+  font-size: 3rem;
+}
+
+h2,
+.heading-l {
+  font-size: 2.25rem;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+h3,
+.heading-m {
+  font-size: 1.5rem;
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 2px solid $border-colour;
+}
+
+h4, h5, h6, .heading-s {
+  font-size: 1.1875rem;
+}
+
+li, a, p, dt, dl, dd, span { font-size: 1.1875rem; }

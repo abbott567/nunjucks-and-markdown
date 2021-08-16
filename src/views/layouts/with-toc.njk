@@ -1,0 +1,66 @@
+{%- from 'views/components/toc/macro.njk' import toc -%}
+{%- from path + '/config.njk' import config -%}
+
+{% set mdcontent %}
+  {% include path + '/content.md' %}
+{% endset %}
+
+{% set title = config.title %}
+{% set h1 = config.h1 %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{h1}} - {{title}}</title>
+    <meta name="description" content="{{title}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      {% include 'public/css/styles.css' %}
+    </style>
+  </head>
+
+  <body id="top" tabindex="-1">
+    {% include 'views/components/skip-link/template.njk' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <nav id="navigation" role="navigation">
+            <h2 id="tests">
+              Navigation
+            </h2>
+            {{ toc(path) }}
+          </nav>
+        </div>
+        
+        <div class="col-8">
+          <main id="main" role="main" tabindex="-1">
+            <h1>{{h1}}</h1>
+            {{mdcontent|markdown|safe}}
+            {%- include 'views/components/back-to-top/template.njk' -%}
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <footer role="contentinfo">
+            <h2 class="heading-s">
+              Document info
+            </h2>
+            <ul class="list">
+              <li>Published date: {{date}}</li>
+              {%- for key, value in config.document_info -%}
+                <li>{{key}}: {{value}}</li>
+              {%- endfor -%}
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      {% include 'public/js/app.js' %}
+    </script>
+  </body>
+</html>
