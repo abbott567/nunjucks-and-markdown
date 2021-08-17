@@ -45,6 +45,6 @@
     "require-dir": "^1.2.0",
     "sass": "^1.38.0",
     "slugify": "^1.6.0",
-    "wcagify": "^1.2.1"
+    "wcagify": "^1.3.0"
   }
 }

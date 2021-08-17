@@ -86,7 +86,7 @@ We tested the page using the following assistive technologies:
 Users affected:
 : Screen reader users
 WCAG reference:
-: [1.1.1 Non-text content]({wcag})
+: [1.1.1 Non-text content]({wcagify})
 
 Pseudo content is content which is on the page but is not part of the HTML. In this case, it is the use of icons which is causing the issue. The icons are not image files, and therefore they cannot have alternative text in the form of an `alt` attribute. The images are loaded in using italic tags `<i>` and then populated using the `::before` selector. Because you can’t add alt attributes to `<i>` tags, you’ll need to add `aria-label` attribute so it is clear to the user what the icons are. For example, the plus (+) icon on the tools section would need a text alternative added so that when a screen reader highlights it the correct description is announced:
 ```html
@@ -97,7 +97,7 @@ Pseudo content is content which is on the page but is not part of the HTML. In t
 Users affected:
 : Everyone
 WCAG reference:
-: [1.3.1 Info and relationships]({wcag})
+: [1.3.1 Info and relationships]({wcagify})
 
 Every page should have a heading level 1. This orientates users on the page. For example, on the "my competency" page you’d expect to have:
 
@@ -110,7 +110,7 @@ Every page should have a heading level 1. This orientates users on the page. For
 Users affected:
 : Keyboard users
 WCAG reference:
-: [2.1.1 Keyboard]({wcag})
+: [2.1.1 Keyboard]({wcagify})
 
 There are elements on the page which can only be interacted with if you're using a mouse. The info icon, the comment icon, and the X icon all cannot be accessed via a keyboard so you cannot access any of the additional information or leave any feedback.
 
@@ -119,7 +119,7 @@ Users affected:
 : Screen reader users
 : Keyboard users
 WCAG reference:
-: [2.4.1 Bypass Blocks]({wcag})
+: [2.4.1 Bypass Blocks]({wcagify})
 
 Keyboard and screen reader users don’t use a mouse. They will move through the elements of the page in a sequential manner. For example, using the tab key. Bypass blocks outlines that you need a way to skip over repeated content on each page so that the user can remain efficient. Usually this is done with a skip link which is the first thing inside the body of the page. When the user hits the tab key, the skip link appears and when you press enter it skips the user past the navigation menus etc. Without a skip-link the user has to tab through dozens of links on every page to get to the content. To see an example of a skip link, go to [GOV.UK](https://gov.uk) and press the tab key.
 
@@ -128,7 +128,7 @@ Keyboard and screen reader users don’t use a mouse. They will move through the
 Users affected:
 : Screen reader users
 WCAG reference:
-: [3.1.1 Language of page]({wcag})
+: [3.1.1 Language of page]({wcagify})
 
 Screen readers have many language configurations, so the page language needs to be set to make sure the screen reader known which configuration it should be using. This means it gets the pronunciation right and doesn't try to pronounce English using a different language setting. The language attribute should be set on the `<html>` tag. For example:
 ```html
@@ -141,7 +141,7 @@ Users affected:
 : Screen reader users
 : Keyboard users
 WCAG reference:
-: [4.1.2 Name, Role, Value]({wcag})
+: [4.1.2 Name, Role, Value]({wcagify})
 
 The `<main>` tag of a page is where the content goes. On every page this is where users expect to find the content for that particular page. This page does not have a main element. It is using a `<div>` tag which has a class of main, but not a role of main. For example:
 
@@ -164,7 +164,7 @@ Users affected:
 : Screen reader users
 : Keyboard users
 WCAG reference:
-: [4.1.2 Name, Role, Value]({wcag})
+: [4.1.2 Name, Role, Value]({wcagify})
 
 There is an attribute applied to the sidebar and the tree view which puts them in the tab order despite them not being interactive. Anything which has a tabindex equal to or more than 0 will then be able to be tabbed to by the keyboard. If you need to use a tabindex for Javascript functionality, then you should use `tabindex="-1"`. By using -1 you can use Javascript to focus the element but the keyboard won't try to interact with it.
 
@@ -172,7 +172,7 @@ There is an attribute applied to the sidebar and the tree view which puts them i
 Users affected:
 : Screen reader users
 WCAG reference:
-: [4.1.3 Status message]({wcag})
+: [4.1.3 Status message]({wcagify})
 
 When you click in the info icon there is a pop-up dialogue. It would probably be impossible to open this with a screenreader as you cant access it with a keyboard, but if you manage it, then it isn't clear what has popped up. 
 

@@ -1,5 +1,4 @@
 const slugify = require('slugify')
-const wcagify = require('wcagify')
 
 function code (renderer) {
   renderer.code = function (code, infostring, escaped) {
@@ -42,15 +41,6 @@ function heading (renderer) {
         ${text}
       </h${level}>
     `
-  }
-}
-function link (renderer) {
-  renderer.link = function (href, title, text) {
-    const iswcag = href.match(/{wcag}/)
-    if (iswcag) {
-      const wcag = wcagify(text)
-      return `<a href="${wcag.link}"${wcag.name}>${wcag.criterion}</a>`
-    }
   }
 }
 function paragraph (renderer) {
@@ -99,4 +89,4 @@ function paragraph (renderer) {
   }
 }
 
-module.exports = { code, heading, link, paragraph }
+module.exports = { code, heading, paragraph }
