@@ -119,7 +119,7 @@ Users affected:
 : Screen reader users
 : Keyboard users
 WCAG reference:
-: [2.1.4 Bypass Blocks]({wcag})
+: [2.4.1 Bypass Blocks]({wcag})
 
 Keyboard and screen reader users don’t use a mouse. They will move through the elements of the page in a sequential manner. For example, using the tab key. Bypass blocks outlines that you need a way to skip over repeated content on each page so that the user can remain efficient. Usually this is done with a skip link which is the first thing inside the body of the page. When the user hits the tab key, the skip link appears and when you press enter it skips the user past the navigation menus etc. Without a skip-link the user has to tab through dozens of links on every page to get to the content. To see an example of a skip link, go to [GOV.UK](https://gov.uk) and press the tab key.
 
