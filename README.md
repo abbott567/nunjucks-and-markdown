@@ -15,32 +15,33 @@
 ## How it works.
 The compiler will use Gulp, Nunjucks and MarkedJS to compile correctly structured folders in the `markdown` folder, to the `output` folder.
 
-Each document needs a `config.njk` and a `content.md`. The config file defines the H1 and the title which is needed for the template. Other than this, you just need to write your markdown into the `content.md` file. 
+Each document needs a `config.js` and a `content.md`. The config file defines the H1, title and which layout you want to compile into. Other than this, you just need to write your markdown into the `content.md` file. 
 
 > Note for now: As the H1 is currently defined in the config file, you should start your markdown from a heading level 2.
 
 ```javascript
-// config.njk
-{% set config = {
+// config.js
+module.exports = {
   h1: 'Example document',
   title: 'Compile Markdown and Nunjucks',
+  layout: 'with-toc',
   document_info: {
     Author: 'Craig Abbott'
   }
-} %}
+}
 ```
 
 ## Config
-Each document consists of a `config.njk` file and a `content.md` file. The content is the main part of your document, and the config is the supporting information which helps make the template work. 
-
-The config allows you to add info such as author name and title.
+The config file is important. It won't compile without it. You need to make it exportable and you need to specify a layout. The layout is the filename in the `scr/views/layouts/` folder you wish to use. You can add as many templates as you like, but you need to specify which one you want to compile to in your config file.
 
 ```javascript
-set config = {
-  h1: "Markdown test file",
-  title: "Document compiler",
+// config.js
+module.exports = {
+  h1: 'Example document',
+  title: 'Compile Markdown and Nunjucks',
+  layout: 'with-toc',
   document_info: {
-    Author: "Author Name"
+    Author: 'Craig Abbott'
   }
 }
 ```

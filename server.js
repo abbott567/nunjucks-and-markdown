@@ -24,11 +24,10 @@ app.get('/', (req, res) => {
 })
 app.get(/^([^.]+)$/, (req, res) => {
   let path = req.path
+  const config = require(`./markdown/${path}/config`)
   path = path.substr(1)
-  if (path === '') {
-    path = 'example'
-  }
-  res.render('with-toc.njk', { path })
+  config.filepath = path
+  res.render(`${config.layout}.njk`, { config })
 })
 
 // Serve

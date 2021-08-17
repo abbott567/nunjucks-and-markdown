@@ -1,8 +1,7 @@
 {%- from 'views/components/toc/macro.njk' import toc -%}
-{%- from path + '/config.njk' import config -%}
 
 {% set mdcontent %}
-  {% include path + '/content.md' %}
+  {% include config.filepath + '/content.md' %}
 {% endset %}
 
 {% set title = config.title %}
@@ -28,7 +27,7 @@
             <h2 id="tests">
               Navigation
             </h2>
-            {{ toc(path) }}
+            {{ toc(config.filepath) }}
           </nav>
         </div>
         
