@@ -1,6 +1,6 @@
 {
   "name": "markdown-documents",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Markdown compiler for simple documents.",
   "main": "index.njk",
   "scripts": {
@@ -43,8 +43,8 @@
     "node-sass": "^6.0.1",
     "nunjucks": "^3.2.3",
     "require-dir": "^1.2.0",
-    "sass": "^1.37.5",
+    "sass": "^1.38.0",
     "slugify": "^1.6.0",
-    "wcagify": "^1.0.0"
+    "wcagify": "^1.0.1"
   }
 }
