@@ -9,21 +9,21 @@ gulp.task('scrape', (done) => {
     if (err) throw err
     const promises = []
     documents.forEach(document => {
-      promises.push(new Promise((resolve, reject) => {
-        (async () => {
-          const response = await got(`http://localhost:3000/${document}`)
-          const html = minify(response.body, { collapseWhitespace: true })
-          const date = datefns.format(new Date(), 'yyyy-MM-dd')
-          const filename = `${date}-${document}-compiled`
-          await fs.writeFile(`output/${filename}.html`, html, function (err) {
-            if (err) {
-              reject(err)
-            }
-            console.log(`--------------- ${document} HTML Written ---------------`)
-            resolve()
-          })
-        })()
-      }))
+      if (document !== '.DS_Store') {
+        promises.push(new Promise((resolve, reject) => {
+          (async () => {
+            const response = await got(`http://localhost:3000/${document}`)
+            const html = minify(response.body, { collapseWhitespace: true })
+            const date = datefns.format(new Date(), 'yyyy-MM-dd')
+            const filename = `${date}-${document}-compiled`
+            await fs.writeFile(`output/${filename}.html`, html, function (err) {
+              if (err) reject(err)
+              console.log(`--------------- ${document} HTML Written ---------------`)
+              resolve()
+            })
+          })()
+        }))
+      }
     })
     await Promise.all(promises)
     done()
